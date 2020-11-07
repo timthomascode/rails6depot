@@ -1,5 +1,6 @@
 class CartsController < ApplicationController
   before_action :set_cart, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authorize, only: [:create, :update, :destroy]
   
   # If someone attempts to access a cart that doesn't exist, 
   # invoke invalid_cart method
